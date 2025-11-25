@@ -424,3 +424,8 @@ tr:hover td {
     padding-top: 60px !important;
   }
 }
+@media (max-width: 600px) {
+  .brand {
+    margin-top: 50px !important;
+  }
+}
