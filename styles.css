@@ -1,0 +1,443 @@
+/* ==========================================================================
+   Estilo Dashboard Profesional – Optimizado
+   ========================================================================== */
+
+:root {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --accent: #0b6efd;
+  --accent-dark: #084ec4;
+  --muted: #6b7280;
+  --dark: #111827;
+  --sidebar-bg: #0f1724;
+}
+
+/* ----------------------------- */
+/* GENERAL */
+/* ----------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ----------------------------- */
+/* SIDEBAR — FIJO */
+/* ----------------------------- */
+.sidebar {
+  position: fixed;
+  /* ← Sidebar fijo */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  /* ← Siempre toda la altura */
+  overflow-y: auto;
+  /* ← Scroll propio */
+
+  width: 250px;
+  background: var(--sidebar-bg);
+  color: #fff;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.brand small {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.menu {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu a {
+  padding: 10px 12px;
+  color: #d1d5db;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.15s;
+  font-size: 14px;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.pin {
+  margin-top: 24px;
+}
+
+.pin label {
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.pin input {
+  width: 100%;
+  padding: 9px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  outline: none;
+}
+
+.pin input:focus {
+  border-color: var(--accent);
+}
+
+.pin button {
+  width: 100%;
+  padding: 9px;
+  background: var(--accent);
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.pin button:hover {
+  background: var(--accent-dark);
+}
+
+.sidebar-foot {
+  font-size: 11px;
+  color: #94a3b8;
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* ----------------------------- */
+/* MAIN AREA — AJUSTADO AL SIDEBAR */
+/* ----------------------------- */
+.main {
+  flex: 1;
+  padding: 20px 28px;
+  overflow-y: auto;
+  margin-left: 250px;
+  /* ← Para que no quede debajo del menú */
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info .outline {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: var(--dark);
+  transition: 0.15s;
+}
+
+.user-info .outline:hover {
+  background: #e5e7eb;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ----------------------------- */
+/* CARD */
+/* ----------------------------- */
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* ----------------------------- */
+/* FORM GRID */
+/* ----------------------------- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.form-grid label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.form-grid input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  transition: 0.15s;
+}
+
+.form-grid input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(11, 110, 253, 0.15);
+}
+
+/* ----------------------------- */
+/* BUTTONS */
+/* ----------------------------- */
+button {
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  transition: 0.15s;
+}
+
+button:hover {
+  background: var(--accent-dark);
+}
+
+button.outline {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+button.outline:hover {
+  background: rgba(11, 110, 253, 0.08);
+}
+
+/* ----------------------------- */
+/* SPINNER */
+/* ----------------------------- */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #e5e7eb;
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----------------------------- */
+/* TABLES */
+/* ----------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+th {
+  background: var(--dark);
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:nth-child(even) td {
+  background: #f9fafb;
+}
+
+tr:hover td {
+  background: #eef2f7;
+}
+
+/* Para valores vacíos */
+.empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ----------------------------- */
+/* RESPONSIVE */
+/* ----------------------------- */
+@media (max-width: 800px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .main {
+    margin-left: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+}
+
+#numeros-list table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px !important;
+  /* letra más pequeña */
+  margin-top: 10px;
+}
+
+/* Encabezados compactos */
+#numeros-list table thead th {
+  background: #0f172a;
+  color: #fff;
+  padding: 6px 8px;
+  /* menos alto */
+  font-size: 12px !important;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Celdas compactas */
+#numeros-list table tbody td {
+  padding: 6px 8px;
+  /* menos alto */
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Filas alternadas */
+#numeros-list table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+#numeros-list table tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+/* Evitar desbordes de columnas largas */
+#numeros-list table td,
+#numeros-list table th {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hacer que si es muy grande tenga scroll horizontal */
+#numeros-list {
+  overflow-x: auto;
+}
+/* Tabla general compacta */
+#numeros-list table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Encabezados */
+#numeros-list table thead th {
+  background: #0f172a;
+  color: #fff;
+  padding: 6px 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Celdas */
+#numeros-list table tbody td {
+  padding: 6px 8px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Filas alternadas */
+#numeros-list table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* --- COLUMNAS COMPACTAS POR DEFECTO --- */
+#numeros-list table td,
+#numeros-list table th {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* NOMBRE_CLIENTE → columna 2 */
+#numeros-list table td:nth-child(2),
+#numeros-list table th:nth-child(2) {
+  max-width: none !important;
+  white-space: normal !important;
+  text-overflow: unset !important;
+}
+
+/* EMAIL → columna 6 */
+#numeros-list table td:nth-child(6),
+#numeros-list table th:nth-child(6) {
+  max-width: none !important;
+  white-space: normal !important;
+  text-overflow: unset !important;
+}
+
+/* Scroll horizontal si fuera necesario */
+#numeros-list {
+  overflow-x: auto;
+}
