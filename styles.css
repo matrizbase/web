@@ -424,9 +424,50 @@ tr:hover td {
     padding-top: 60px !important;
   }
 }
+/* Botón hamburguesa — estilo profesional */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 12px;
+  right: 12px;                   /* ← SE MUEVE A LA DERECHA */
+  z-index: 10000;
+  background: var(--sidebar-bg); /* ← Color igual que la barra */
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* SOLO en pantallas pequeñas */
 @media (max-width: 600px) {
+
+  /* Mostrar botón */
   .hamburger {
-    left: auto !important;
-    right: 12px !important;
+    display: block !important;
+  }
+
+  /* Sidebar cerrada */
+  .sidebar {
+    transform: translateX(-260px) !important;
+    display: block !important; /* Safari iPhone fix */
+  }
+
+  /* Sidebar abierta */
+  .sidebar.show {
+    transform: translateX(0) !important;
+  }
+
+  /* Main ajustado para evitar superposición */
+  .main {
+    margin-left: 0 !important;
+    padding-top: 70px !important; /* Más espacio para que NO tape nada */
+  }
+
+  /* Bajar un poco la marca (logo) cuando sidebar está cerrada */
+  .brand {
+    margin-top: 40px !important;
   }
 }
