@@ -400,3 +400,27 @@ tr:hover td {
     padding-top: 60px;
   }
 }
+@media (max-width: 600px) {
+
+  /* Sidebar oculta al inicio */
+  .sidebar {
+    transform: translateX(-260px) !important;
+    display: block !important;  /* Safari NO acepta display:none */
+  }
+
+  /* Sidebar abierta */
+  .sidebar.show {
+    transform: translateX(0) !important;
+  }
+
+  /* Botón hamburguesa visible */
+  .hamburger {
+    display: block !important;
+  }
+
+  /* Main ajustado */
+  .main {
+    margin-left: 0 !important;
+    padding-top: 60px !important;
+  }
+}
