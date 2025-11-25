@@ -425,7 +425,8 @@ tr:hover td {
   }
 }
 @media (max-width: 600px) {
-  .brand {
-    margin-top: 50px !important;
+  .hamburger {
+    left: auto !important;
+    right: 12px !important;
   }
 }
