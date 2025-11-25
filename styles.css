@@ -441,3 +441,23 @@ tr:hover td {
 #numeros-list {
   overflow-x: auto;
 }
+/* Sidebar oculto en móvil */
+@media (max-width: 600px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-260px);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .main {
+    margin-left: 0 !important;
+    padding-top: 60px;
+  }
+}
