@@ -1,6 +1,3 @@
-/* ==========================================================================
-   Estilo Dashboard Profesional – Optimizado
-   ========================================================================== */
 
 :root {
   --bg: #f5f7fa;
@@ -37,14 +34,10 @@ body {
 /* ----------------------------- */
 .sidebar {
   position: fixed;
-  /* ← Sidebar fijo */
   top: 0;
   left: 0;
   height: 100vh;
-  /* ← Siempre toda la altura */
   overflow-y: auto;
-  /* ← Scroll propio */
-
   width: 250px;
   background: var(--sidebar-bg);
   color: #fff;
@@ -52,6 +45,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s ease;
+  z-index: 9999;
 }
 
 .brand h1 {
@@ -141,7 +136,6 @@ body {
   padding: 20px 28px;
   overflow-y: auto;
   margin-left: 250px;
-  /* ← Para que no quede debajo del menú */
 }
 
 .topbar {
@@ -262,12 +256,6 @@ button.outline:hover {
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* ----------------------------- */
 /* TABLES */
 /* ----------------------------- */
@@ -301,12 +289,6 @@ tr:hover td {
   background: #eef2f7;
 }
 
-/* Para valores vacíos */
-.empty {
-  color: var(--muted);
-  font-style: italic;
-}
-
 /* ----------------------------- */
 /* RESPONSIVE */
 /* ----------------------------- */
@@ -325,52 +307,37 @@ tr:hover td {
 }
 
 @media (max-width: 600px) {
-  .sidebar {
-    display: none;
-  }
-
   .main {
     margin-left: 0;
   }
 }
 
+/* ----------------------------- */
+/* TABLA DE RESULTADOS ESPECIAL */
+/* ----------------------------- */
+
 #numeros-list table {
   width: 100%;
   border-collapse: collapse;
   font-size: 12px !important;
-  /* letra más pequeña */
   margin-top: 10px;
 }
 
-/* Encabezados compactos */
 #numeros-list table thead th {
   background: #0f172a;
   color: #fff;
   padding: 6px 8px;
-  /* menos alto */
   font-size: 12px !important;
   white-space: nowrap;
   text-align: center;
 }
 
-/* Celdas compactas */
 #numeros-list table tbody td {
   padding: 6px 8px;
-  /* menos alto */
   white-space: nowrap;
   text-align: center;
 }
 
-/* Filas alternadas */
-#numeros-list table tbody tr:nth-child(even) {
-  background: #f8fafc;
-}
-
-#numeros-list table tbody tr:nth-child(odd) {
-  background: #ffffff;
-}
-
-/* Evitar desbordes de columnas largas */
 #numeros-list table td,
 #numeros-list table th {
   max-width: 120px;
@@ -378,58 +345,9 @@ tr:hover td {
   text-overflow: ellipsis;
 }
 
-/* Hacer que si es muy grande tenga scroll horizontal */
-#numeros-list {
-  overflow-x: auto;
-}
-/* Tabla general compacta */
-#numeros-list table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-/* Encabezados */
-#numeros-list table thead th {
-  background: #0f172a;
-  color: #fff;
-  padding: 6px 8px;
-  font-size: 12px;
-  white-space: nowrap;
-  text-align: center;
-}
-
-/* Celdas */
-#numeros-list table tbody td {
-  padding: 6px 8px;
-  white-space: nowrap;
-  text-align: center;
-}
-
-/* Filas alternadas */
-#numeros-list table tbody tr:nth-child(even) {
-  background: #f8fafc;
-}
-
-/* --- COLUMNAS COMPACTAS POR DEFECTO --- */
-#numeros-list table td,
-#numeros-list table th {
-  max-width: 120px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-/* NOMBRE_CLIENTE → columna 2 */
+/* Columnas expandidas */
 #numeros-list table td:nth-child(2),
-#numeros-list table th:nth-child(2) {
-  max-width: none !important;
-  white-space: normal !important;
-  text-overflow: unset !important;
-}
-
-/* EMAIL → columna 6 */
+#numeros-list table th:nth-child(2),
 #numeros-list table td:nth-child(6),
 #numeros-list table th:nth-child(6) {
   max-width: none !important;
@@ -437,15 +355,15 @@ tr:hover td {
   text-overflow: unset !important;
 }
 
-/* Scroll horizontal si fuera necesario */
 #numeros-list {
   overflow-x: auto;
 }
-/* ============================
-   MODO MÓVIL – SOLO AJUSTES
-   ============================ */
 
-/* Botón hamburguesa (oculto en escritorio) */
+/* ==========================================================================
+   🔥 RESPONSIVE REAL PARA MÓVIL — SIDEBAR + HAMBURGER
+   ========================================================================== */
+
+/* Botón hamburguesa */
 .hamburger {
   display: none;
   position: fixed;
@@ -454,34 +372,31 @@ tr:hover td {
   z-index: 10000;
   background: var(--accent);
   color: #fff;
-  padding: 10px 12px;
-  font-size: 24px;
+  padding: 10px 14px;
+  font-size: 22px;
   border-radius: 8px;
   cursor: pointer;
 }
 
-/* Reglas SOLO para pantallas pequeñas */
+/* SOLO en móvil */
 @media (max-width: 600px) {
-
-  /* Mostrar botón */
   .hamburger {
     display: block;
   }
 
-  /* Sidebar oculto por defecto */
+  /* Sidebar oculta inicialmente */
   .sidebar {
     transform: translateX(-260px);
-    transition: transform 0.28s ease-in-out;
   }
 
-  /* Sidebar visible cuando tiene .show */
+  /* Sidebar abierta */
   .sidebar.show {
     transform: translateX(0);
   }
 
-  /* El contenido ocupa toda la pantalla */
+  /* Main area se ajusta */
   .main {
     margin-left: 0 !important;
-    padding-top: 70px;
+    padding-top: 60px;
   }
 }
